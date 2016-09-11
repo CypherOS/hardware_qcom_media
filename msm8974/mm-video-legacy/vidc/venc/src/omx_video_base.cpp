@@ -2618,7 +2618,11 @@ OMX_ERRORTYPE omx_video::allocate_input_meta_buffer(
                     OMX_U32              bytes)
 {
   unsigned index = 0;
-  if(!bufferHdr || bytes != sizeof(encoder_media_buffer_type))
+
+  // In meta-mode alloc-length is not known conclusively
+  // Allow allocation for atleast gralloc metadata handles
+  //  and check for size in ETB
+  if(!bufferHdr || bytes < sizeof(VideoGrallocMetadata))
   {
     DEBUG_PRINT_ERROR("wrong params allocate_input_meta_buffer Hdr %p len %d",
                      bufferHdr,bytes);
