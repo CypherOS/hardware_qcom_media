@@ -74,7 +74,7 @@ LOCAL_C_INCLUDES                += $(libmm-vdec-inc)
 
 LOCAL_HEADER_LIBRARIES  += libnativebase_headers
 
-LOCAL_SHARED_LIBRARIES  := liblog libutils libbinder libcutils libdl
+LOCAL_SHARED_LIBRARIES  := liblog libutils libui libbinder libcutils libdl
 
 LOCAL_SHARED_LIBRARIES  += libdivxdrmdecrypt
 LOCAL_SHARED_LIBRARIES += libqservice
